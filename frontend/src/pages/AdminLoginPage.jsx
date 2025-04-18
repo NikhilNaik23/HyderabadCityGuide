@@ -12,7 +12,7 @@ const AdminLoginPage = () => {
 
   useEffect(() => {
     if (localStorage.getItem("isAdmin")) {
-      navigate("/dashboard");
+      navigate("/admin/dashboard");
     }
   }, [navigate]);
 
@@ -42,7 +42,7 @@ const AdminLoginPage = () => {
       } else {
         toast.success(data.message);
         localStorage.setItem("isAdmin", "true");
-        navigate("/dashboard");
+        navigate("/admin/dashboard");
       }
     } catch (error) {
       toast.error("An error occurred. Please try again.");

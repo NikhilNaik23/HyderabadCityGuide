@@ -50,7 +50,7 @@ const AdminDashboard = () => {
             <h2 className="text-xl font-semibold text-gray-700">
               Total Attractions
             </h2>
-            <Link to={"/attraction"}>
+            <Link to={"/admin/attraction"}>
               <FaArrowRight className="text-black h-5" />
             </Link>
           </div>
@@ -62,7 +62,7 @@ const AdminDashboard = () => {
             <h2 className="text-xl font-semibold text-gray-700">
               Total Cuisines
             </h2>
-            <Link to={"/cuisines"}>
+            <Link to={"/admin/cuisine"}>
               <FaArrowRight className="text-black h-5" />
             </Link>
           </div>

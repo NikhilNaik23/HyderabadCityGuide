@@ -16,7 +16,7 @@ const AdminNavbar = () => {
         });
         localStorage.removeItem("isAdmin"); 
         toast.success("Logged out successfully");
-        navigate('/')
+        navigate('/admin')
       } catch (error) {
         toast.error("An error occurred. Please try again.");
       }
@@ -26,7 +26,7 @@ const AdminNavbar = () => {
   return (
     <div className="md:px-14">
       <nav className="bg-blue-900/10 h-16 w-full flex items-center justify-between px-3 shadow-md overflow-x-auto">
-        <Link to={"/dashboard"}>
+        <Link to={"/admin/dashboard"}>
           <div className="flex items-center space-x-2 min-w-fit sm:text-2xl">
             <img
               src="/logo.jpg"
@@ -43,7 +43,7 @@ const AdminNavbar = () => {
         <ul className="flex items-center space-x-4 text-white text-sm font-medium min-w-fit sm:text-2xl justify-center">
           <li>
             <Link
-              to="/attraction"
+              to="/admin/attraction"
               className="hover:text-yellow-300 transition whitespace-nowrap"
             >
               Attractions
@@ -51,7 +51,7 @@ const AdminNavbar = () => {
           </li>
           <li>
             <Link
-              to="/cuisine"
+              to="/admin/cuisine"
               className="hover:text-yellow-300 transition whitespace-nowrap"
             >
               Cuisines

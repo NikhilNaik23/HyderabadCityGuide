@@ -16,7 +16,7 @@ function App() {
       <Toaster />
 
       <Routes>
-        <Route path="/" element={<AdminLoginPage />} />
+        <Route path="/admin/" element={<AdminLoginPage />} />
 
         <Route
           element={
@@ -25,9 +25,9 @@ function App() {
             </ProtectedRoute>
           }
         >
-          <Route path="/dashboard" element={<AdminDashboard />} />
-          <Route path="/attraction" element={<Attractions />} />
-          <Route path="/cuisine" element={<Cuisines />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/attraction" element={<Attractions />} />
+          <Route path="/admin/cuisine" element={<Cuisines />} />
         </Route>
       </Routes>
     </div>

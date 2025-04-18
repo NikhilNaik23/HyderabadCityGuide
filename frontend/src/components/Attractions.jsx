@@ -54,7 +54,7 @@ const Attractions = () => {
     try {
       const res = await fetch(endpoint, {
         method,
-        body: formData, // send the FormData, don't stringify
+        body: formData, 
       });
   
       const data = await res.json();
@@ -64,7 +64,6 @@ const Attractions = () => {
       } else {
         toast.success(editingId ? "Attraction Updated" : "Attraction Created");
   
-        // Reset form
         setName("");
         setDesc("");
         setImage(null);
