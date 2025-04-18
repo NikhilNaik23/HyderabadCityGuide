@@ -14,7 +14,8 @@ export const login = async (req, res) => {
       return res.status(400).json({ error: "Invalid Credentials" });
     }
     generateTokenAndSetCookie(isAdmin, res);
-    res.status(200).json({message:`Logged in successfully`});
+    isAdmin.password = null;
+    res.status(200).json({admin:isAdmin,message:`Logged in successfully`});
   } catch (error) {
     console.log(`Error in Login Controller ${error.message}`);
     res.status(500).json({ error: `Internal Server Error` });

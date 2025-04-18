@@ -8,6 +8,7 @@ import Attractions from "./components/Attractions";
 import { Toaster } from "react-hot-toast";
 import AdminLayout from "./components/AdminLayout";
 import Cuisines from "./components/Cuisines";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -15,11 +16,15 @@ function App() {
       <Toaster />
 
       <Routes>
-        {/* Public/Login route */}
         <Route path="/" element={<AdminLoginPage />} />
 
-        {/* Protected/Admin routes with layout */}
-        <Route element={<AdminLayout />}>
+        <Route
+          element={
+            <ProtectedRoute>
+              <AdminLayout />
+            </ProtectedRoute>
+          }
+        >
           <Route path="/dashboard" element={<AdminDashboard />} />
           <Route path="/attraction" element={<Attractions />} />
           <Route path="/cuisine" element={<Cuisines />} />
