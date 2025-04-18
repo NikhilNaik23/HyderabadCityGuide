@@ -16,7 +16,7 @@ function App() {
       <Toaster />
 
       <Routes>
-        <Route path="/admin/" element={<AdminLoginPage />} />
+        <Route path="/" element={<AdminLoginPage />} />
 
         <Route
           element={
