@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import History from './History'; // Import the History component
-import Navbar from './Navbar';
 
 const Home = () => {
   const [isFullScreen, setIsFullScreen] = useState(true);
@@ -20,7 +19,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen ">
-      <Navbar/>
+
       {/* Home Section */}
       <div
         className={`${
