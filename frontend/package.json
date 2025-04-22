@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
+    "@vitejs/plugin-react": "^4.3.4",
     "ca2": "file:..",
+    "daisyui": "^5.0.19",
     "leaflet": "^1.9.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -19,10 +21,8 @@
     "react-icons": "^5.5.0",
     "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.5.0",
-    "tailwindcss": "^4.1.4",
-    "@vitejs/plugin-react": "^4.3.4",
-    "daisyui": "^5.0.19",    
     "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.4",
     "vite": "^6.2.0"
   },
   "devDependencies": {
