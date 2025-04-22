@@ -12,9 +12,9 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Home from './Components/Home';
 import Specialties from "./components/Specialties";
 import Explore from "./components/Explore";
-import Navbar from "./Components/Navbar";
 import MapAndRoutes from "./components/MapAndRoutes";
 import Authority from "./components/Authority";
+import Navbar from "./components/Navbar";
 
 function App() {
   const location = useLocation();
