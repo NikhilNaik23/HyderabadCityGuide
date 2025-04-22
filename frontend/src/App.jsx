@@ -15,10 +15,12 @@ import Explore from "./components/Explore";
 import MapAndRoutes from "./components/MapAndRoutes";
 import Authority from "./components/Authority";
 import Navbar from "./components/Navbar";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith('/admin');
+  
 
   return (
     <div className="min-h-screen">
@@ -43,6 +45,7 @@ function App() {
           <Route path="/admin/attraction" element={<Attractions />} />
           <Route path="/admin/cuisine" element={<Cuisines />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
