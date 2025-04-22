@@ -9,7 +9,7 @@ import { Toaster } from "react-hot-toast";
 import AdminLayout from "./components/AdminLayout";
 import Cuisines from "./components/Cuisines";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Home from './Components/Home';
+import Home from './components/Home';
 import Specialties from "./components/Specialties";
 import Explore from "./components/Explore";
 import MapAndRoutes from "./components/MapAndRoutes";
