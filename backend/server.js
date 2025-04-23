@@ -10,6 +10,7 @@ import { fileURLToPath } from "url"; // Import fileURLToPath from 'url'
 import AdminRoute from "./routes/admin.route.js";
 import AttractionRoute from "./routes/attraction.route.js";
 import FoodRoute from "./routes/food.route.js";
+import MailRoute from "./routes/mail.route.js";
 
 // Get the current directory path
 const __filename = fileURLToPath(import.meta.url);
@@ -39,6 +40,7 @@ app.use(express.json());
 app.use("/api/admin", AdminRoute);
 app.use("/api/attraction", AttractionRoute);
 app.use("/api/food", FoodRoute);
+app.use("/api/send-mail",MailRoute)
 
 if (process.env.NODE_ENV === "production") {
   // Serve static files for the frontend build

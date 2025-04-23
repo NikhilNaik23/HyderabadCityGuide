@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 const Historical = ({ title, content, image, imageClassName , textClassName ,cn }) => {
   return (
-    <div className={twMerge(" sticky top-30 min-h-screen ",cn)}>
+    <div className={twMerge(" sticky top-30 ",cn)}>
     <div className="border  border-yellow-500 rounded-lg p-6 bg-[#846c48] text-white max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start">
       
       {/* Text Section */}

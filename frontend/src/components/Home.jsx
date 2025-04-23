@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import History from './History'; // Import the History component
+import History from './History';
+import Footer from './Footer';
+import Contact from './Contact';
 
 const Home = () => {
   const [isFullScreen, setIsFullScreen] = useState(true);
@@ -37,6 +39,8 @@ const Home = () => {
 
       {/* History Section */}
       <History />
+      <Contact />
+      <Footer/>
     </div>
   );
 };
