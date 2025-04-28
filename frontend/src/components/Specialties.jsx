@@ -10,7 +10,7 @@ const Specialties = () => {
     }
     useEffect(()=>{
         fetchData();
-    })
+    },[])
 
   return (
     <div className="pt-16 text-center bg-gradient-to-b from-yellow-900 to-white text-white min-h-screen">

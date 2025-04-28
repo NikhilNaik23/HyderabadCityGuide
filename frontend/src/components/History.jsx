@@ -56,7 +56,7 @@ const History = () => {
   return (
     <div className="text-white bg-[#DFA16E] bg-[linear-gradient(138deg,_rgba(223,_161,_110,_1)_0%,_rgba(97,_50,_22,_1)_52%,_rgba(0,_0,_0,_1)_100%)] px-8 py-12 min-h-screen flex flex-col items-center justify-center">
       {/* Heading */}
-      <h1 className="text-4xl font-bold text-center mb-8 sticky top-15">
+      <h1 className="text-4xl font-bold text-center mb-8 md:sticky top-15">
         Historical Background
       </h1>
 
