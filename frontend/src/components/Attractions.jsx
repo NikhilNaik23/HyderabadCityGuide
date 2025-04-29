@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import toast from "react-hot-toast";
 import GetAllAttractions from "./GetAllAttractions";
 
 const Attractions = () => {
+  const fileInputRef = useRef(null)
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [image, setImage] = useState(null);
@@ -68,6 +69,9 @@ const Attractions = () => {
         setDesc("");
         setImage(null);
         setEditingId(null);
+        if (fileInputRef.current) {
+          fileInputRef.current.value = "";
+        }
   
         fetchAttractions();
       }
@@ -104,6 +108,7 @@ const Attractions = () => {
            <input
             type="file"
             accept="image/*"
+            ref={fileInputRef}
             onChange={handleImageChange}
             className="block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:border file:border-gray-300 file:rounded-md file:text-sm file:font-semibold file:bg-gray-50 hover:file:bg-gray-100"
           />

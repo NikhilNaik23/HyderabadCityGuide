@@ -13,15 +13,13 @@ const GetAllCuisines = ({
   setEditingId,
 }) => {
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this cuisine?"))
-      return;
+    if (!window.confirm("Are you sure you want to delete this cuisine?")) return;
 
     try {
       const res = await fetch(`/api/food/delete/${id}`, {
         method: "DELETE",
       });
       const data = await res.json();
-      console.log(data);
 
       if (res.ok) {
         toast.success(`Deleted Successfully`);
@@ -30,7 +28,6 @@ const GetAllCuisines = ({
         toast.error(data.error || "Failed to delete.");
       }
     } catch (error) {
-      console.error("Delete error:", error);
       toast.error("Something went wrong.");
     }
   };
@@ -44,23 +41,29 @@ const GetAllCuisines = ({
         {cuisines.map((cuisine) => (
           <div
             key={cuisine._id}
-            className="grid grid-cols-4 gap-4 bg-blue-950 text-white rounded-xl p-4"
+            className="flex flex-col md:flex-row items-center bg-blue-950 text-white rounded-xl p-4 gap-4 shadow"
           >
-            <div className="col-span-3 space-y-2">
+            {cuisine.image && (
+              <img
+                src={cuisine.image}
+                alt={cuisine.name}
+                className="w-28 h-28 object-cover rounded-lg border-2 border-white shadow-md"
+              />
+            )}
+
+            {/* Details */}
+            <div className="flex-1 space-y-2 w-full">
               <h2 className="text-xl font-semibold">{cuisine.name}</h2>
-              <p>{cuisine.description}</p>
-              <p><strong>Category:</strong> {cuisine.category}</p>
-              {cuisine.image && (
-                <img
-                  src={cuisine.image}
-                  alt={cuisine.name}
-                  className="w-32 h-32 object-cover rounded"
-                />
-              )}
+              <p className="text-sm">{cuisine.description}</p>
+              <p className="text-xs text-blue-200">
+                <strong>Category:</strong> {cuisine.category}
+              </p>
             </div>
-            <div className="flex flex-col justify-center items-center space-y-2">
+
+            {/* Actions */}
+            <div className="flex flex-row md:flex-col gap-2">
               <button
-                className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600"
+                className="bg-yellow-500 text-white px-3 py-2 rounded hover:bg-yellow-600 flex items-center justify-center"
                 onClick={() => {
                   setName(cuisine.name);
                   setDesc(cuisine.description);
@@ -68,15 +71,16 @@ const GetAllCuisines = ({
                   setImage(null);
                   setEditingId(cuisine._id);
                 }}
+                title="Edit"
               >
-                <CiEdit />
+                <CiEdit size={20} />
               </button>
-
               <button
-                className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+                className="bg-red-600 text-white px-3 py-2 rounded hover:bg-red-700 flex items-center justify-center"
                 onClick={() => handleDelete(cuisine._id)}
+                title="Delete"
               >
-                <MdDelete />
+                <MdDelete size={20} />
               </button>
             </div>
           </div>

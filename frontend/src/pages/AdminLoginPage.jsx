@@ -53,7 +53,7 @@ const AdminLoginPage = () => {
 
   return (
     <section className="container">
-      <div className="flex min-h-screen flex-col gap-4 items-center justify-center">
+      <div className="flex min-h-screen min-w-screen flex-col gap-4 items-center justify-center">
         <form className="flex gap-4 flex-col" onSubmit={handleSubmit}>
           <label className="input">
             <IoMdMail />
